@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { toast } from 'react-toastify';
 import icon from '../../assets/img/notification-meta.svg';
 import { BASE_URL } from '../../utils/request';
 import './styles.css';
@@ -10,7 +11,7 @@ type Props = {
 const handleClick = (id:number) =>{
   axios(`http://dsmeta-tarcisio.herokuapp.com/sales/${id}/notification`)
   .then(response =>{
-    console.log("sucesso");
+    toast.info('SMS enviado com sucesso!');
   })
 }
 
